@@ -69,11 +69,16 @@ printVehicle3(oldCivic3);
 
 //
 //
-////////////////
+//////////////// reusable interface
 
-interface Reportable {
-  summary(): string;
-}
+const oldCivic4 = {
+  name: 'civic',
+  year: new Date(),
+  broken: true,
+  summary(): string {
+    return `Name: ${this.name}`;
+  },
+};
 
 const drink = {
   color: 'brown',
@@ -84,9 +89,14 @@ const drink = {
   },
 };
 
+interface Reportable {
+  summary(): string;
+}
+
+// the function's argument is called here more generic - 'item'
 const printSummary = (item: Reportable): void => {
   console.log(item.summary());
 };
 
-printSummary(oldCivic);
-printSummary(drink);
+printSummary(oldCivic4); // -> Name: civic
+printSummary(drink);     // -> My drink has 40 grams of sugar
