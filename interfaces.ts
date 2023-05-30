@@ -44,7 +44,7 @@ printVehicle2(oldCivic2);
 
 //
 //
-////////////// and that also includes functions
+////////////// and can be a function
 const oldCivic3 = {
   name: 'civic',
   year: new Date(),
@@ -58,7 +58,7 @@ interface Vehicle3 {
   name: string;
   year: Date;
   broken: boolean;
-  summary(): string; // it has to be a function with no arguments that returns a string
+  summary(): string; // here it has to be a function with no arguments that returns a string
 }
 
 const printVehicle3 = (vehicle: Vehicle3): void => {
@@ -93,7 +93,7 @@ interface Reportable {
   summary(): string;
 }
 
-// the function's argument is called here more generic - 'item'
+// the function's argument here has a more generic name - 'item'
 const printSummary = (item: Reportable): void => {
   console.log(item.summary());
 };

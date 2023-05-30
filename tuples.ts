@@ -12,6 +12,6 @@ const pepsi: (string | number | boolean)[] = ['brown', true, 40];
 const sprite: [string, boolean, number] = ['clear', true, 40];
 sprite[0] = 10; // it can't be a number now
 
-// 'Drink' is a type alias
+// 'Drink' is a type alias (like a variable)
 type Drink = [string, boolean, number];
 const tea: Drink = ['brown', false, 0];

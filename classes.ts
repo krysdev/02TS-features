@@ -14,7 +14,7 @@ vehicle.drive(); // -> driving
 vehicle.honk(); //  -> beep
 
 //////////////// basic inheritance
-// 'extends' - "copy" everything from Vehicle
+// extends - "copies" everything from Vehicle
 
 class Car extends Vehicle {
   // the method is overridden
@@ -51,7 +51,7 @@ class Car2 extends Vehicle2 {
 }
 
 const vehicle2 = new Vehicle2();
-vehicle2.honk(); // we can't use a protected (and pivate) method outside of the class itself - error
+vehicle2.honk(); // error - we can't use a protected (or pivate) method outside of the class itself
 
 /////////////////////////////////////
 
@@ -88,11 +88,12 @@ const vehicle4 = new Vehicle4('orange');
 console.log(vehicle4.color);
 
 class Car4 extends Vehicle4 {
-  // there is no 'public' before 'color', because we don't want to reasign or create a new field in Car4, we use the one from Vehicle4
+  // there is no 'public' before 'color' (just before 'wheels'),
+  // because we don't want to reasign or create a new field in Car4, we use the one from Vehicle4
   constructor(public wheels: number, color: string) {
     // the constructor in the parent requires 'color'
     // color is passed from the constructor to the 'super' throgh the arguments
-    // super is a reference to the constructor method in the parent
+    // super is a reference to the constructor method in the parent class
     super(color);
   }
 
